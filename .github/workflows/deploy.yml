@@ -35,8 +35,10 @@ jobs:
         with:
           node-version: 20
           cache: "yarn"
+      - name: enable corepack
+        run: corepack enable
       - name: Install dependencies
-        run: yarn install
+        run: yarn install --immutable --immutable-cache
 
       - name: Set environment variables
         run: |
