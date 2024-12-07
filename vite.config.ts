@@ -7,8 +7,6 @@ import { fileURLToPath } from "url";
 export default defineConfig(() => {
   return {
     plugins: [vue()],
-    root: fileURLToPath(new URL("./", import.meta.url)),
-    base: fileURLToPath(new URL("./", import.meta.url)),
     resolve: {
       alias: [
         {
