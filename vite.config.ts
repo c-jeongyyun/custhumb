@@ -7,6 +7,7 @@ import { fileURLToPath } from "url";
 export default defineConfig(() => {
   return {
     plugins: [vue()],
+    base: "/custhumb/",
     resolve: {
       alias: [
         {
