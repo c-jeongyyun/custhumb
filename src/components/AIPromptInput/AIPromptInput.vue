@@ -3,17 +3,21 @@
     <input
       :value="value"
       @input="onInput"
-      @keydown.enter="emit('click:send-btn')"
+      @keydown.enter="$emit('click:send-btn', value)"
+      :placeholder="placeholder"
     />
-    <button @click="$emit('click:send-btn')">
+    <button @click="$emit('click:send-btn', value)">
       <span class="send-icon"> ⌲ </span>
     </button>
   </div>
 </template>
 
 <script setup lang="ts">
-const value = defineModel("value", { required: true });
-const emit = defineEmits<{ "click:send-btn": [] }>();
+type PropsType = { placeholder?: string };
+
+defineProps<PropsType>();
+const value = defineModel<string | undefined>("value", { required: true });
+defineEmits<{ "click:send-btn": [value: string | undefined] }>();
 const onInput = (e: Event) => {
   value.value = (e.target as HTMLInputElement).value;
 };

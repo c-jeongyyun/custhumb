@@ -9,7 +9,6 @@ export default defineConfig(() => {
     plugins: [vue()],
     root: fileURLToPath(new URL("./", import.meta.url)),
     base: fileURLToPath(new URL("./", import.meta.url)),
-    // base: fileURLToPath(new URL("./", import.meta.url)),
     resolve: {
       alias: [
         {
