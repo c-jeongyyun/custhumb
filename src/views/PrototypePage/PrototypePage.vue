@@ -125,6 +125,7 @@ const onClickGenerateThumbnailBtn = async () => {
       },
       headers: {
         "Content-Type": "image/png",
+        api_key: "1",
       },
     }
   );

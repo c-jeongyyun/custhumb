@@ -5,5 +5,6 @@ export const api = axios.create({
   headers: {
     "Access-Control-Allow-Origin": window.location.origin,
     "Access-Control-Allow-Credentials": "true",
+    withCredentials: "true",
   },
 });
